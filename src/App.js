@@ -3,12 +3,12 @@ import FormularioJuridico from './components/personaJuridica/formulariojuridico/
 import Citajur from './components/personaJuridica/citasjuridico/ListaCita';
 import Formulario from './components/personaNatural/formularionatural/Formulario';
 import Cita from './components/personaNatural/citasnatural/ListaCita';
-import Editar from './components/personaNatural/editar/Formulario'
 import 'mdb-react-ui-kit/dist/css/mdb.min.css'
 import {MDBTable,MDBTableHead} from 'mdb-react-ui-kit';
 import Swal from 'sweetalert2'
 
 function App() {
+
 //personas juridicas
   // Citas en local storage
   let juridicasIniciales = JSON.parse(localStorage.getItem('juridicas'));
@@ -63,7 +63,7 @@ function App() {
  
    // Arreglo de citas
    const [citas, guardarCitas] = useState(citasIniciales);
- 
+
    // Use Effect para realizar ciertas operaciones cuando el state cambia
    useEffect( () => {
        let citasIniciales = JSON.parse(localStorage.getItem('citas'));
@@ -95,19 +95,14 @@ function App() {
         text: 'You have successfully deleted a task!'
     })
    }
-   const [basicModal, setBasicModal] = useState(false);
 
-   const toggleShow = () => setBasicModal(!basicModal);
    //funcion que edita una cita por el id 
-    const editarCita = id => {
-      <Editar editarCita={editarCita}/>
-      Swal.fire({
-          icon: 'success',
-          title: 'Yay...',
-          text: 'You have successfully edited an existing task!'
-      })
-    }
-
+   const editarCita = (cita) => {
+    const{
+      dispatch
+    }=cita
+    console.log(cita)
+  }
   return (
     <Fragment>
       
@@ -158,24 +153,10 @@ function App() {
           <div className="one-half column">
           <Formulario 
                 crearCita={crearCita}
+                editarCita={editarCita}
               />
           </div>
           <div className="one-half column">
-              
-              <MDBTable responsive>
-                <MDBTableHead>
-                      <tr>
-                        <th scope='col'>accionista de:</th>
-                        <th scope='col'>participacion</th>
-                        <th scope='col'>identificacion</th>
-                        <th scope='col'>fecha de ingreso</th>
-                        <th scope='col'>Nombres</th>
-                        <th scope='col'>email</th>
-                        <th scope='col'>eliminar</th>
-                      </tr>
-                </MDBTableHead>
-              </MDBTable>
-             
               {citas.map(cita => (
                 <Cita
                   key={cita.id}

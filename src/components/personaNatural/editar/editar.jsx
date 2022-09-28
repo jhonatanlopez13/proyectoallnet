@@ -5,7 +5,7 @@ import { MDBInput } from 'mdb-react-ui-kit';
 import 'mdb-react-ui-kit/dist/css/mdb.min.css';
 import {MDBBtn,MDBModal,MDBModalDialog,MDBModalContent,MDBModalHeader,MDBModalTitle,MDBModalBody,MDBModalFooter,} from 'mdb-react-ui-kit';
 
-const Formulario = ({crearCita,}) => {
+const Formulario = ({editarCita}) => {
     //modal
     const [basicModal, setBasicModal] = useState(false);
 
@@ -61,36 +61,15 @@ const Formulario = ({crearCita,}) => {
         cita.id = uuid();
 
         // Crear la cita
-        crearCita(cita);
+        editarCita(cita);
 
-        // Reiniciar el form
-        actualizarCita({
-            tipodoc: '',
-            identificacion: '',
-            paisExpedicion: '',
-            primerApellido: '',
-            segundoApellido: '',
-            primernombre:'',
-            segundonombre:'',
-            fechanacimineto:'',
-            paisnacimiento:'',
-            nacionalidad:'',
-            paisrecidencia:'',
-            departamentonotificacion:'',
-            municipionotificacion:'',
-            direccionnotififacion:'',
-            codigopostal:'',
-            email:'',
-            accionitade:'',
-            porcentajeparticipacion:''
-        })
+        
     }
 
     return ( 
-        <Fragment>
-            <h2 > Personas Naturales</h2>
+        <Fragment> 
 
-            <MDBBtn onClick={toggleShow}>Crear Beneficiario Final</MDBBtn>
+            <MDBBtn onClick={toggleShow}>editar</MDBBtn>
                 <MDBModal show={basicModal} setShow={setBasicModal} tabIndex='-1'>
                 <MDBModalDialog>
                     <MDBModalContent>
