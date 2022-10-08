@@ -284,7 +284,7 @@ const Formulario = ({editarCita}) => {
                             type="submit"
                             className="u-full-width button-primary"
                         >
-                            guardar 
+                            
                         </MDBBtn>
                     </MDBModalFooter>
                         

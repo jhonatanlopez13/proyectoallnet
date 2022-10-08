@@ -100,8 +100,10 @@ function App() {
 
    //funcion que edita una cita por el id 
    const editarCita = (id,nuevasCitas) => {
-   
-    console.log(guardarCitas)
+    const editarnueva = citas.put(cita => cita.id !== id );
+    guardarCitas(nuevasCitas);
+    
+    // console.log(cita)
   }
   return (
     <Fragment>

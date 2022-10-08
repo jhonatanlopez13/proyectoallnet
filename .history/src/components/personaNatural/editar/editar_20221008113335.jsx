@@ -12,7 +12,7 @@ const Formulario = ({editarCita}) => {
     const toggleShow = () => setBasicModal(!basicModal);
   
     // Crear State de Citas
-    const [editarcita, actualizarCita] = useState({
+    const [cita, actualizarCita] = useState({
         tipodoc: '',
         identificacion: '',
         paisExpedicion: '',
@@ -37,13 +37,13 @@ const Formulario = ({editarCita}) => {
     // Función que se ejecuta cada que el usuario escribe en un input
     const actualizarState = e => {
         actualizarCita({
-            ...editarcita,
+            ...cita,
             [e.target.name]: e.target.value 
         })
     }
 
     // Extraer los valores
-    const { tipodoc, identificacion, paisExpedicion, primerApellido, segundoApellido,primernombre,segundonombre,fechanacimineto,paisnacimiento,nacionalidad,paisrecidencia,departamentonotificacion,municipionotificacion,direccionnotififacion,codigopostal,email,accionitade,porcentajeparticipacion } = editarcita;
+    const { tipodoc, identificacion, paisExpedicion, primerApellido, segundoApellido,primernombre,segundonombre,fechanacimineto,paisnacimiento,nacionalidad,paisrecidencia,departamentonotificacion,municipionotificacion,direccionnotififacion,codigopostal,email,accionitade,porcentajeparticipacion } = cita;
 
     // Cuando el usuario presiona agregar cita
     const submitCita = e => {
@@ -58,10 +58,10 @@ const Formulario = ({editarCita}) => {
         actualizarError(false);
 
         // Asignar un ID
-        editarcita.id = uuid();
+        cita.id = uuid();
 
         // Crear la cita
-        editarCita(editarcita);
+        editarCita(cita);
 
         
     }
@@ -90,7 +90,7 @@ const Formulario = ({editarCita}) => {
                                 className="u-full-width"
                                 placeholder="tipo de documento"
                                 onChange={actualizarState}
-                                value={tipodoc}
+                                value={cita && cita.tipodoc}
                             />
                         </div>
                         <div className="class">
@@ -284,7 +284,7 @@ const Formulario = ({editarCita}) => {
                             type="submit"
                             className="u-full-width button-primary"
                         >
-                            guardar 
+                            
                         </MDBBtn>
                     </MDBModalFooter>
                         

@@ -5,7 +5,7 @@ import { MDBInput } from 'mdb-react-ui-kit';
 import 'mdb-react-ui-kit/dist/css/mdb.min.css';
 import {MDBBtn,MDBModal,MDBModalDialog,MDBModalContent,MDBModalHeader,MDBModalTitle,MDBModalBody,MDBModalFooter,} from 'mdb-react-ui-kit';
 
-const Formulario = ({editarCita}) => {
+const Formulario = ({editarCita,cita}) => {
     //modal
     const [basicModal, setBasicModal] = useState(false);
 
@@ -284,7 +284,7 @@ const Formulario = ({editarCita}) => {
                             type="submit"
                             className="u-full-width button-primary"
                         >
-                            guardar 
+                            
                         </MDBBtn>
                     </MDBModalFooter>
                         

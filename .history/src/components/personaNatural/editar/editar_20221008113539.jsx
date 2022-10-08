@@ -12,7 +12,7 @@ const Formulario = ({editarCita}) => {
     const toggleShow = () => setBasicModal(!basicModal);
   
     // Crear State de Citas
-    const [editarcita, actualizarCita] = useState({
+    const [editar, actualizareditar] = useState({
         tipodoc: '',
         identificacion: '',
         paisExpedicion: '',
@@ -37,13 +37,13 @@ const Formulario = ({editarCita}) => {
     // Función que se ejecuta cada que el usuario escribe en un input
     const actualizarState = e => {
         actualizarCita({
-            ...editarcita,
+            ...cita,
             [e.target.name]: e.target.value 
         })
     }
 
     // Extraer los valores
-    const { tipodoc, identificacion, paisExpedicion, primerApellido, segundoApellido,primernombre,segundonombre,fechanacimineto,paisnacimiento,nacionalidad,paisrecidencia,departamentonotificacion,municipionotificacion,direccionnotififacion,codigopostal,email,accionitade,porcentajeparticipacion } = editarcita;
+    const { tipodoc, identificacion, paisExpedicion, primerApellido, segundoApellido,primernombre,segundonombre,fechanacimineto,paisnacimiento,nacionalidad,paisrecidencia,departamentonotificacion,municipionotificacion,direccionnotififacion,codigopostal,email,accionitade,porcentajeparticipacion } = cita;
 
     // Cuando el usuario presiona agregar cita
     const submitCita = e => {
@@ -58,10 +58,10 @@ const Formulario = ({editarCita}) => {
         actualizarError(false);
 
         // Asignar un ID
-        editarcita.id = uuid();
+        cita.id = uuid();
 
         // Crear la cita
-        editarCita(editarcita);
+        editarCita(cita);
 
         
     }
@@ -90,7 +90,7 @@ const Formulario = ({editarCita}) => {
                                 className="u-full-width"
                                 placeholder="tipo de documento"
                                 onChange={actualizarState}
-                                value={tipodoc}
+                                value={cita && cita.tipodoc}
                             />
                         </div>
                         <div className="class">
@@ -101,7 +101,7 @@ const Formulario = ({editarCita}) => {
                                 className="u-full-width"
                                 placeholder="Nombre tipodoc"
                                 onChange={actualizarState}
-                                value={identificacion}
+                                value={cita&& cita.identificacion}
                             />
                         </div>
                         <div className="class">
@@ -112,7 +112,7 @@ const Formulario = ({editarCita}) => {
                                 className="u-full-width"
                                 placeholder="Pais Expedicion identificacion"
                                 onChange={actualizarState}
-                                value={paisExpedicion}
+                                value={cita&& cita.paisExpedicion}
                             />
                         </div>
                         <div className="class">
@@ -123,7 +123,7 @@ const Formulario = ({editarCita}) => {
                                 className="u-full-width"
                                 placeholder="Nombre tipodoc"
                                 onChange={actualizarState}
-                                value={primerApellido}
+                                value={cita&& cita.primerApellido}
                             />
                         </div>
                         <div className="class">
@@ -134,7 +134,7 @@ const Formulario = ({editarCita}) => {
                                 className="u-full-width"
                                 placeholder="Nombre tipodoc"
                                 onChange={actualizarState}
-                                value={segundoApellido}
+                                value={cita&& cita.segundoApellido}
                             />
                         </div>
                         <div className="class">
@@ -145,7 +145,7 @@ const Formulario = ({editarCita}) => {
                                 className="u-full-width"
                                 placeholder="Nombre tipodoc"
                                 onChange={actualizarState}
-                                value={primernombre}
+                                value={cita&& cita.primernombre}
                             />
                         </div>
                         <div className="class">
@@ -156,7 +156,7 @@ const Formulario = ({editarCita}) => {
                                 className="u-full-width"
                                 placeholder="Nombre tipodoc"
                                 onChange={actualizarState}
-                                value={segundonombre}
+                                value={cita&& cita.segundonombre}
                             />
                         </div>
                         <div className="class">
@@ -167,7 +167,7 @@ const Formulario = ({editarCita}) => {
                                 className="u-full-width"
                                 placeholder="Nombre tipodoc"
                                 onChange={actualizarState}
-                                value={fechanacimineto}
+                                value={cita&& cita.fechanacimineto}
                             />
                         </div>
                         <div className="class">
@@ -178,7 +178,7 @@ const Formulario = ({editarCita}) => {
                                 className="u-full-width"
                                 placeholder="Nombre tipodoc"
                                 onChange={actualizarState}
-                                value={paisnacimiento}
+                                value={cita&& cita.paisnacimiento}
                             />
                         </div>
                         <div className="class">
@@ -189,7 +189,7 @@ const Formulario = ({editarCita}) => {
                                 className="u-full-width"
                                 placeholder="Nombre tipodoc"
                                 onChange={actualizarState}
-                                value={nacionalidad}
+                                value={cita&& cita.nacionalidad}
                             />
                         </div>
                         <div className="class">
@@ -200,7 +200,7 @@ const Formulario = ({editarCita}) => {
                                 className="u-full-width"
                                 placeholder="Nombre tipodoc"
                                 onChange={actualizarState}
-                                value={paisrecidencia}
+                                value={cita&& cita.paisrecidencia}
                             />
                         </div>
                         <div className="class">
@@ -211,7 +211,7 @@ const Formulario = ({editarCita}) => {
                                 className="u-full-width"
                                 placeholder="Nombre tipodoc"
                                 onChange={actualizarState}
-                                value={departamentonotificacion}
+                                value={cita&& cita.departamentonotificacion}
                             />
                         </div>
                         <div className="class">
@@ -222,7 +222,7 @@ const Formulario = ({editarCita}) => {
                                 className="u-full-width"
                                 placeholder="Nombre tipodoc"
                                 onChange={actualizarState}
-                                value={municipionotificacion}
+                                value={cita&& cita.municipionotificacion}
                             />
                         </div>
                         <div className="class">
@@ -233,7 +233,7 @@ const Formulario = ({editarCita}) => {
                                 className="u-full-width"
                                 placeholder="Nombre tipodoc"
                                 onChange={actualizarState}
-                                value={direccionnotififacion}
+                                value={cita&& cita.direccionnotififacion}
                             />
                         </div>
                         <div className="class">
@@ -244,7 +244,7 @@ const Formulario = ({editarCita}) => {
                                 className="u-full-width"
                                 placeholder="Nombre tipodoc"
                                 onChange={actualizarState}
-                                value={codigopostal}
+                                value={cita&& cita.codigopostal}
                             />
                         </div> <div className="class">
                             <label>email:</label>
@@ -254,7 +254,7 @@ const Formulario = ({editarCita}) => {
                                 className="u-full-width"
                                 placeholder="Nombre tipodoc"
                                 onChange={actualizarState}
-                                value={email}
+                                value={cita&& cita.email}
                             />
                         </div>
                         <div className="class">
@@ -265,7 +265,7 @@ const Formulario = ({editarCita}) => {
                                 className="u-full-width"
                                 placeholder="Nombre tipodoc"
                                 onChange={actualizarState}
-                                value={accionitade}
+                                value={cita&& cita.accionitade}
                             />
                         </div>
                        <div className="class">
@@ -276,7 +276,7 @@ const Formulario = ({editarCita}) => {
                                 className="u-full-width"
                                 placeholder="Nombre tipodoc"
                                 onChange={actualizarState}
-                                value={porcentajeparticipacion}
+                                value={cita&& cita.porcentajeparticipacion}
                             />
                         </div>
                     <MDBModalFooter>
@@ -284,7 +284,7 @@ const Formulario = ({editarCita}) => {
                             type="submit"
                             className="u-full-width button-primary"
                         >
-                            guardar 
+                            
                         </MDBBtn>
                     </MDBModalFooter>
                         

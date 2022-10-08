@@ -90,7 +90,7 @@ const Formulario = ({editarCita}) => {
                                 className="u-full-width"
                                 placeholder="tipo de documento"
                                 onChange={actualizarState}
-                                value={tipodoc}
+                                value={cita && cita.tipodoc}
                             />
                         </div>
                         <div className="class">
@@ -284,7 +284,7 @@ const Formulario = ({editarCita}) => {
                             type="submit"
                             className="u-full-width button-primary"
                         >
-                            guardar 
+                            
                         </MDBBtn>
                     </MDBModalFooter>
                         
