@@ -301,13 +301,11 @@ const Formulario = ({crearCita,}) => {
                             />
                         </div>
                     <MDBModalFooter>
-                        <MDBBtn
-                        color='secondary'
+                    <MDBBtn
                             type="submit"
                             className="u-full-width button-primary"
-                            onClick={toggleShow}
                         >
-                            Agregar Cita
+                            guardar 
                         </MDBBtn>
                     </MDBModalFooter>
                         

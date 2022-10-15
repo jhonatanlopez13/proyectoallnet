@@ -146,12 +146,12 @@ const Formulario = ({crearjuridica, }) => {
                         />
                         <MDBModalFooter>
 
-                        <button
+                        <MDBBtn
                             type="submit"
                             className="u-full-width button-primary"
                         >
                             Agregar juridica
-                        </button>
+                        </MDBBtn>
                     </MDBModalFooter>
                         
                     </form>

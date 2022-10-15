@@ -1,12 +1,11 @@
 import React, { Fragment, useState, useEffect } from 'react';
 import FormularioJuridico from './components/personaJuridica/formulariojuridico/Formulario';
 import Citajur from './components/personaJuridica/citasjuridico/ListaCita';
-import Formulario from './components/personanatural/formularionatural/Formulario';
-import Cita from './components/personanatural/citasnatural/ListaCita';
+import Formulario from './components/personaNatural/formularionatural/Formulario';
+import Cita from './components/personaNatural/citasnatural/ListaCita';
 import 'mdb-react-ui-kit/dist/css/mdb.min.css'
 import {MDBTable,MDBTableHead} from 'mdb-react-ui-kit';
 import Swal from 'sweetalert2'
-import Editar from  './components/personanatural/editar/editar'
 
 function App() {
 
@@ -16,8 +15,10 @@ function App() {
   if(!juridicasIniciales) {
     juridicasIniciales = [];
   }
-  // Arreglo de juridica
+  // Arreglo de juridica}
   const [juridicas, guardarjuridicas] = useState(juridicasIniciales);
+    const [editarjuridico, guardarJuridicoeditar] =useState(juridicasIniciales)
+
 
   // Use Effect para realizar ciertas operaciones cuando el state cambia
   useEffect( () => {
@@ -49,6 +50,12 @@ function App() {
       title: 'Oops...',
       text: 'You have successfully deleted a task!'
   })
+  }
+  
+   //funcion que edita una cita por el id 
+   const editarJuridico = (id,nuevasCitas) => {
+   
+    console.log(guardarjuridicas)
   }
 
   // Mensaje condicional
@@ -137,6 +144,7 @@ function App() {
                     key={juridico.id}
                     juridico={juridico}
                     eliminarjuridica={eliminarjuridica}
+                    editarJuridico={editarJuridico}
                   />
                 </div>
                

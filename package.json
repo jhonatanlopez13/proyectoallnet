@@ -9,10 +9,10 @@
     "datatables.net-dt": "^1.12.1",
     "datatables.net-editor-server": "^2.0.10",
     "mdb-react-ui-kit": "^4.2.0",
-    "mdbreact": "^5.2.0",
+    "mdbreact": "^4.6.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-scripts": "5.0.1",
+    "react-scripts": "^5.0.1",
     "sweetalert2": "^11.4.33",
     "web-vitals": "^2.1.4"
   },
