@@ -21,7 +21,8 @@ export default function App() {
       <MDBModal show={basicModal} setShow={setBasicModal} tabIndex='-1'>
         <MDBModalDialog>
           <MDBModalContent>
-            <MDBModalHeader>
+            <MDBModalHeader className='modaltitle'>
+              <h1 className='title'>Terminos y condiciones</h1>
               <MDBBtn className='btn-close' color='none' onClick={toggleShow}></MDBBtn>
             </MDBModalHeader>
             <MDBModalBody>  
