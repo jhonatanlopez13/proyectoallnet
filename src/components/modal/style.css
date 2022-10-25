@@ -45,7 +45,10 @@
   .rotating {
     width: auto;
     height: auto;
+    font-size:100px!important;
+    margin-bottom: 10px;
     text-align: center;
+    display: block;
     -webkit-animation: rotating 2s linear infinite;
     -moz-animation: rotating 2s linear infinite;
     -ms-animation: rotating 2s linear infinite;

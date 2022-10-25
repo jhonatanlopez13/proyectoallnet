@@ -22,13 +22,10 @@ export default function App() {
         <MDBModalDialog>
           <MDBModalContent>
             <MDBModalHeader>
-              <MDBModalTitle>
-                <i className="rotating fas fa-info"></i>
-              </MDBModalTitle>
               <MDBBtn className='btn-close' color='none' onClick={toggleShow}></MDBBtn>
             </MDBModalHeader>
             <MDBModalBody>  
-              
+            <i className="rotating fas fa-info"></i>
               <p>Si usted es persona natural beneficiaria o adherente, favor diligenciar el formulario.</p>
               <p>
                   Si usted es persona jurídica, favor indicar el documento y razón social, y a continuación diligenciar
