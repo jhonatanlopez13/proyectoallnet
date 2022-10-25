@@ -6,9 +6,11 @@ import Cita from './components/personaNatural/citasnatural/ListaCita';
 import 'mdb-react-ui-kit/dist/css/mdb.min.css'
 import {MDBTable,MDBTableHead} from 'mdb-react-ui-kit';
 import Swal from 'sweetalert2'
-
+import EModal from './components/modal/modal'
+  
 function App() {
 
+  
 //personas juridicas
   // Citas en local storage
   let juridicasIniciales = JSON.parse(localStorage.getItem('juridicas'));
@@ -110,10 +112,11 @@ function App() {
    
     console.log(guardarCitas)
   }
+
   return (
     <Fragment>
       
-
+      <EModal/>
       <div className="container">
       <h1>BENEFICIARIOS FINALES - ACCION SA</h1>
         <div className="row">
