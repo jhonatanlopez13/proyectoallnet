@@ -19,7 +19,7 @@ function App() {
   }
   // Arreglo de juridica}
   const [juridicas, guardarjuridicas] = useState(juridicasIniciales);
-    const [editarjuridico, guardarJuridicoeditar] =useState(juridicasIniciales)
+    // const [editarjuridico, guardarJuridicoeditar] =useState(juridicasIniciales)
 
 
   // Use Effect para realizar ciertas operaciones cuando el state cambia
